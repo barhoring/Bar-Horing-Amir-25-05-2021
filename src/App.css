@@ -13,6 +13,10 @@
   justify-content: end;
 } */
 
+.title {
+  text-align: initial;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -30,6 +34,10 @@
   border-style: solid;
   border-color: blueviolet;
   border-width: 0px 0px 3px 0px;
+}
+
+.logo-header * {
+  padding: 0;
 }
 
 .search {

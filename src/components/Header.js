@@ -5,7 +5,15 @@ const Header = () => {
           Herolo Weather Task
         </div>
         <div>
-          Home | Favorites
+          <div>
+            Home | Favorites
+          </div>
+          <div>
+            Dark / Light
+          </div>
+          <div>
+            C / F
+          </div>
         </div>
       </header>
   );

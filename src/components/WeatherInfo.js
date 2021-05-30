@@ -7,7 +7,7 @@ const WeatherInfo = () => {
       <div className="weather-info">
         <CityForecast />
         <h1 className="today-sky">Scattered Clouds</h1>
-        <div>5 days forecast</div>
+        {/* 5 days forecast */}
         <WeekForecast />
       </div>
     </div>
