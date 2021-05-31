@@ -15,8 +15,11 @@ const WeekForecast = ({ forecast = defaultForecast, dailyForecasts }) => {
         {
           dailyForecasts && Object.values(dailyForecasts).map(e => {
             const temperature = e.Temperature;
+            const day = new Intl.DateTimeFormat('en-US', { weekday: 'long'}).format(new Date(e.Date));
+            debugger;
+            console.log(day)
             return (
-            <DayForecast degrees={forecast[e]} isCelsius={true} temperature={temperature} />
+            <DayForecast degrees={forecast[e]} isCelsius={true} day={day} temperature={temperature} />
           )})
         }
       </div>

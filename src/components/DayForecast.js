@@ -1,10 +1,10 @@
 
-const DayForecast = ({ degrees, isCelsius, temperature }) => {
+const DayForecast = ({ degrees, isCelsius, temperature, day }) => {
   const units = isCelsius ? "C" : "F";
   return (
     <div className="day-forecast">
       <h4>
-        Sun
+        {day}
       </h4>
       <div className="temp">
         Minimum: {temperature?.Minimum.Value}° {units}

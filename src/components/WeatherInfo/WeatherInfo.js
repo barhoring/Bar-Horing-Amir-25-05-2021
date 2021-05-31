@@ -17,16 +17,13 @@ const WeatherInfo = ({ currentLocation }) => {
 
       const uri_current_conditions = `${API_CURRENT_CONDITIONS_URL_BASE}/${currentLocation.Key}?apikey=${API_KEY1}&metric=true`;
       // add catch
-      debugger;
       fetch(uri_current_conditions)
       .then(res => res.json()).then(res => {
-        debugger;
         setConditionsNow(res[0]);
       }).catch(e => { debugger; console.log(e)});
     }
   }, [currentLocation])
 
-  debugger;
   return (
     <div className="weather-info-container">
       {/* <div>{JSON.stringify(dailyForecasts)}</div> */}
