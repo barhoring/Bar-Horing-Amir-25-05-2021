@@ -3,7 +3,7 @@ import {
   TOGGLE_IS_CELSIUS,
   SELECT_LOCATION_KEY,
   ADD_TO_FAVORITES,
-  REMOVE_TO_FAVORITES
+  REMOVE_FROM_FAVORITES
 } from "./actionConstants";
 
 const defaultState = {
@@ -28,20 +28,23 @@ export const reducer = function (state = defaultState, action) {
       return {...state, currentLocation };
     case ADD_TO_FAVORITES:
       {
-        const location = action.payload.location;
+        debugger;
+        const _location = action.payload.location; // location is a reserved word
         const newState = {...state};
         const newFavoritesCities = {...newState.favoritesCities};
-        const cityKey = location.Key;
+        const cityKey = _location.Key;
         debugger;
-        newFavoritesCities[cityKey] = location;
+        newFavoritesCities[cityKey] = _location;
         return {...newState, favoritesCities: newFavoritesCities}
       }
-    case REMOVE_TO_FAVORITES:
+    case REMOVE_FROM_FAVORITES:
       {
-        const locationKey = action.payload;
+        debugger;
+        const { locationKey } = action.payload;
         const newState = {...state};
-        delete newState[locationKey];
-        return newState;
+        const newFavoritesCities = {...state.favoritesCities}
+        delete newFavoritesCities[locationKey];
+        return { ...newState, favoritesCities: newFavoritesCities };
       }
     default:
       return state;

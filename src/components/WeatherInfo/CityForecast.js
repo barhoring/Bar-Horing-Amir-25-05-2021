@@ -1,4 +1,4 @@
-const CityForecast = ({ isCelsius, currentLocation, conditionsNow, handleAddToFavorites }) => {
+const CityForecast = ({ isCelsius, currentLocation, conditionsNow, handleToggleFavorite, isFavorite }) => {
   const units = isCelsius ? "C" : "F";
   return (
     <div className="city-forecast">
@@ -12,11 +12,11 @@ const CityForecast = ({ isCelsius, currentLocation, conditionsNow, handleAddToFa
             {conditionsNow?.Temperature?.Metric?.Value}° {units}
           </div>
         </div>
-        <div onClick={() => handleAddToFavorites(currentLocation)}>
-          ❤️
+        <div onClick={() => { handleToggleFavorite(currentLocation)}}>
+          { isFavorite ? "❤️" : "♡" }
         </div>
       </div>
-      <h1 className="today-sky">{conditionsNow.WeatherText}</h1>
+      <h1 className="today-sky">{conditionsNow?.WeatherText}</h1>
     </div>
   );
 }

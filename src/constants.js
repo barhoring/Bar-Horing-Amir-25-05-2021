@@ -6,5 +6,5 @@ export const API_KEY3 = "L4XQxeAAeKSSx0AfIcOyQLi1mD9htWe5";
 export const API_KEY5 = "jCLPUDFqHDZV7369qCF3gfHGutmpcVKG";
 export const API_KEY4 = `vJvpSEzy3aG3nRuNhrMeVnhBeDSj7JFK`;
 export const API_KEY2 = `cNJ6YSXkDrtUrElsVG1kMQMvLrFK4xAg`;
-export const API_KEY1 = "eOYiiAjNR0EuRaIGNoxAlXQQLn56cQMb";
-export const API_KEY6 = "KrnJm3pGAtha40EFim82KLEqvaikzMeS";
+export const API_KEY6 = "eOYiiAjNR0EuRaIGNoxAlXQQLn56cQMb";
+export const API_KEY1 = "KrnJm3pGAtha40EFim82KLEqvaikzMeS";

@@ -3,9 +3,14 @@ import CityForecast from "./CityForecast";
 import WeekForecast from "./WeekForecast";
 import { API_CURRENT_CONDITIONS_URL_BASE, API_FORECASTS_5_DAYS_URL_BASE, API_KEY1 } from "../../constants";
 
-const WeatherInfo = ({ currentLocation, handleAddToFavorites }) => {
+const WeatherInfo = ({ currentLocation, handleAddToFavorites, handleRemoveFromFavorites, isFavorite }) => {
   const [ dailyForecasts, setDailyForecasts ] = useState([]);
   const [ conditionsNow, setConditionsNow ] = useState({});
+
+  const handleToggleFavorite = () => {
+    isFavorite ? handleRemoveFromFavorites(currentLocation.Key) : handleAddToFavorites(currentLocation)
+  }
+
   useEffect(() => {
     if(currentLocation) {
       const uri = `${API_FORECASTS_5_DAYS_URL_BASE}/${currentLocation.Key}?apikey=${API_KEY1}&metric=true`;
@@ -28,7 +33,7 @@ const WeatherInfo = ({ currentLocation, handleAddToFavorites }) => {
     <div className="weather-info-container">
       {/* <div>{JSON.stringify(dailyForecasts)}</div> */}
       <div className="weather-info">
-        <CityForecast handleAddToFavorites={handleAddToFavorites} conditionsNow={conditionsNow} degrees={38} isCelsius={true} currentLocation={currentLocation} />
+        <CityForecast handleToggleFavorite={handleToggleFavorite} isFavorite={isFavorite} handleAddToFavorites={handleAddToFavorites} conditionsNow={conditionsNow} degrees={38} isCelsius={true} currentLocation={currentLocation} />
         {/* 5 days forecast */}
         <WeekForecast {...{dailyForecasts} }/>
       </div>

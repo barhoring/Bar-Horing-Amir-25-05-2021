@@ -8,10 +8,17 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, ownProps) => {
+  const handleRemoveFromFavorites = (locationKey) => dispatch({ type: 'TOGGLE_IS_DARK_MODE', payload: { locationKey } });
+  const handleAddToFavorites = (location) => dispatch({ type: 'TOGGLE_IS_DARK_MODE', payload: { location } });
   return {
-    handleAddToFavorites: (location) => dispatch({ type: 'TOGGLE_IS_DARK_MODE', payload: { location } }),
-    handleRemoveFromFavorites: (locationKey) => dispatch({ type: 'TOGGLE_IS_DARK_MODE', payload: { locationKey } }),
+    handleToggleFavorite: () => {
+      const { location, isFavorite } = ownProps; 
+      if(isFavorite)
+        handleRemoveFromFavorites(location.Key)
+      else
+        handleAddToFavorites(Location)
+    },
   }
 };
 
