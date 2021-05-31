@@ -1,22 +1,30 @@
 import './App.css';
+import { connect } from 'react-redux';
 import Header from './components/Header';
-import Search from './components/Search';
-import WeatherInfo from './components/WeatherInfo';
 import MainPage from "./components/screens/MainPage";
 import FavoritesPage from "./components/screens/FavoritesPage"
 
-import { Router, Link } from "@reach/router";
+import { Router } from "@reach/router";
 
-function App() {
+const mapStateToProps = state => {
+  const { isDarkMode } = state;
+  return {
+    isDarkMode,
+  };
+};
+
+function App({ isDarkMode }) {
   return (
-    <>
-    <Header />
-    <Router>
-      <MainPage path="/" />
-      <FavoritesPage path="/favorites" />
-    </Router>
-  </>
+    <div className={isDarkMode ? "dark-mode" : ""}>
+      <Header />
+      <Router>
+        <MainPage path="/" />
+        <FavoritesPage path="/favorites" />
+      </Router>
+    </div>
   );
 }
 
-export default App;
+export default connect(mapStateToProps, {})(App);
+
+// export default App;

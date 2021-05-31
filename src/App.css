@@ -9,11 +9,17 @@
   pointer-events: none;
 }
 
-/* .logo-header .title {
-  justify-content: end;
-} */
+.dark-mode {
+  background-color: black;
+}
 
-.title {
+.dark-mode,
+.dark-mode .MuiInputLabel-outlined,
+.dark-mode .MuiSvgIcon-root {
+  color: white;
+}
+
+.MuiSvgIcon-root .title {
   text-align: initial;
 }
 
@@ -116,9 +122,6 @@
 }
 
 @media only screen and (max-width: 400px) {
-  /* body {
-    background-color: lightblue;
-  } */
   .week-forecast {
     justify-content: flex-start;
   }
