@@ -17,19 +17,17 @@ const ComboBox = ({ currentLocation, handleSelectLocation }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      console.log('This will run every second!');
-      console.log(query);
       const uri = `${API_AUTO_COMPLETE_BASE}?apikey=${API_KEY1}&q=${query}`;
       if(query !== prevQuery && query) {
         // const params = { q: "new", apiKey: "L4XQxeAAeKSSx0AfIcOyQLi1mD9htWe5" }
         // add catch
         fetch(uri)
-        .then(res => res.json()).then(res => { console.log(res); setAutoCompleteOptions(res) });
+        .then(res => res.json()).then(res => { setAutoCompleteOptions(res) });
       }
       prevQuery = query;
       // fetch options
 
-    }, 2000);
+    }, 1000);
     // Every key up rerenders
     return () => clearInterval(interval);
   }, [query]);

@@ -25,7 +25,7 @@ const WeatherInfo = ({ currentLocation, handleAddToFavorites, handleRemoveFromFa
       fetch(uri_current_conditions)
       .then(res => res.json()).then(res => {
         setConditionsNow(res[0]);
-      }).catch(e => { debugger; console.log(e)});
+      }).catch(e => { console.log(e)});
     }
   }, [currentLocation])
 

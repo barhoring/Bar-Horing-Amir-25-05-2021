@@ -29,13 +29,8 @@ function App({ isDarkMode, handleSelectLocation }) {
     const uri_current_conditions = `${API_GEOPOSITION_BASE}?apikey=${API_KEY1}&q=${latitude},${longitude}`;
     fetch(uri_current_conditions)
     .then(res => res.json()).then(res => {
-      console.log(res);
       handleSelectLocation(res)
     }).catch(e => { console.log(e)});
-
-
-    console.log("latitude", latitude);
-    console.log("longitude", longitude);
   }
 
   useEffect(()=>{

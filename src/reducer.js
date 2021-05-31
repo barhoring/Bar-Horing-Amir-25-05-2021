@@ -28,18 +28,15 @@ export const reducer = function (state = defaultState, action) {
       return {...state, currentLocation };
     case ADD_TO_FAVORITES:
       {
-        debugger;
         const _location = action.payload.location; // location is a reserved word
         const newState = {...state};
         const newFavoritesCities = {...newState.favoritesCities};
         const cityKey = _location.Key;
-        debugger;
         newFavoritesCities[cityKey] = _location;
         return {...newState, favoritesCities: newFavoritesCities}
       }
     case REMOVE_FROM_FAVORITES:
       {
-        debugger;
         const { locationKey } = action.payload;
         const newState = {...state};
         const newFavoritesCities = {...state.favoritesCities}
