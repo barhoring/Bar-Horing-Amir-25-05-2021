@@ -1,4 +1,4 @@
-const Header = () => {
+const Header = ({ isDarkMode, isCelsius, handleToggleIsDarkMode, handleToggleIsCelsius }) => {
   return (
       <header className="logo-header">
         <div className="title">
@@ -8,11 +8,11 @@ const Header = () => {
           <div>
             Home | Favorites
           </div>
-          <div>
-            Dark / Light
+          <div onClick={ handleToggleIsDarkMode }>
+            { isDarkMode ? "Dark" : "Light" }
           </div>
-          <div>
-            C / F
+          <div onClick={ handleToggleIsCelsius }>
+            { isCelsius ? "C" : "F" }
           </div>
         </div>
       </header>

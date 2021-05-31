@@ -1,12 +1,17 @@
 
-const DayForecast = () => {
+const DayForecast = ({ degrees, isCelsius, temperature }) => {
+  const units = isCelsius ? "C" : "F";
   return (
     <div className="day-forecast">
-      <div>
+      <h4>
         Sun
+      </h4>
+      <div className="temp">
+        Minimum: {temperature?.Minimum.Value}° {units}
       </div>
-      <div>
-        38 0 C
+      <div className="temp">
+        Maximum: {temperature?.Maximum.Value}° {units}
+        {/* {degrees}° {units} */}
       </div>
     </div>
   );
