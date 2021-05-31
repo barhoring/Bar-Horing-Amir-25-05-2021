@@ -3,7 +3,7 @@ import CityForecast from "./CityForecast";
 import WeekForecast from "./WeekForecast";
 import { API_CURRENT_CONDITIONS_URL_BASE, API_FORECASTS_5_DAYS_URL_BASE, API_KEY1 } from "../../constants";
 
-const WeatherInfo = ({ currentLocation, handleAddToFavorites, handleRemoveFromFavorites, isFavorite }) => {
+const WeatherInfo = ({ currentLocation, handleAddToFavorites, handleRemoveFromFavorites, isFavorite, isCelsius }) => {
   const [ dailyForecasts, setDailyForecasts ] = useState([]);
   const [ conditionsNow, setConditionsNow ] = useState({});
 
@@ -31,11 +31,9 @@ const WeatherInfo = ({ currentLocation, handleAddToFavorites, handleRemoveFromFa
 
   return (
     <div className="weather-info-container">
-      {/* <div>{JSON.stringify(dailyForecasts)}</div> */}
       <div className="weather-info">
-        <CityForecast handleToggleFavorite={handleToggleFavorite} isFavorite={isFavorite} handleAddToFavorites={handleAddToFavorites} conditionsNow={conditionsNow} degrees={38} isCelsius={true} currentLocation={currentLocation} />
-        {/* 5 days forecast */}
-        <WeekForecast {...{dailyForecasts} }/>
+        <CityForecast handleToggleFavorite={handleToggleFavorite} isFavorite={isFavorite} handleAddToFavorites={handleAddToFavorites} conditionsNow={conditionsNow} isCelsius={isCelsius} currentLocation={currentLocation} />
+        <WeekForecast {...{dailyForecasts, isCelsius} }/>
       </div>
     </div>
   );

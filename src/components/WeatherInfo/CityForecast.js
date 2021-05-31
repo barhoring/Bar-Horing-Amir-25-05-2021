@@ -12,9 +12,12 @@ const CityForecast = ({ isCelsius, currentLocation, conditionsNow, handleToggleF
             {conditionsNow?.Temperature?.Metric?.Value}° {units}
           </div>
         </div>
-        <div onClick={() => { handleToggleFavorite(currentLocation)}}>
-          { isFavorite ? "❤️" : "♡" }
-        </div>
+        {/* in favorites page do not display ♡ heart */}
+        { isFavorite !== undefined && (
+          <div onClick={() => { handleToggleFavorite(currentLocation)}}>
+                  { isFavorite ? "❤️" : "♡" }
+          </div>
+        )}
       </div>
       <h1 className="today-sky">{conditionsNow?.WeatherText}</h1>
     </div>

@@ -7,12 +7,11 @@ const attachTempToCityArray = (cities, data, cityKeys) => {
   cityKeys.forEach((key, index) => {
     debugger;
     newCities[key].conditionsNow = data[index][0];
-    // cities[key].tempNow = data[index][0].Temperature.Metric.Value;
   })
   return newCities;
 }
 
-const Favorites = ({ favoritesCities, handleToggleFavorite, handleAddToFavorites, handleRemoveFromFavorites }) => {
+const Favorites = ({ favoritesCities, handleToggleFavorite, isCelsius }) => {
   const [favoritesCitiesTemps, setFavoritesCitiesTemps] = useState(favoritesCities);
   useEffect(() => {
     const cityKeys = Object.keys(favoritesCities);
@@ -32,13 +31,13 @@ const Favorites = ({ favoritesCities, handleToggleFavorite, handleAddToFavorites
   return (
     <div>
       your favs
-      {JSON.stringify(favoritesCitiesTemps)}
       {Object.values(favoritesCitiesTemps).map(city => {
-        return (<CityForecast 
-          handleToggleFavorite={handleToggleFavorite}
-          conditionsNow={city.conditionsNow}
-          isCelsius={true}
-          currentLocation={city}
+        return (
+          <CityForecast 
+            handleToggleFavorite={handleToggleFavorite}
+            conditionsNow={city.conditionsNow}
+            isCelsius={isCelsius}
+            currentLocation={city}
          />)
       })}
     </div>
