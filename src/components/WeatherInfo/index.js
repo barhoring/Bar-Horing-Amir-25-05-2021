@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import WeatherInfo from './WeatherInfo';
-import { API_CURRENT_CONDITIONS_URL_BASE, API_FORECASTS_5_DAYS_URL_BASE, API_KEY1 } from "../../constants";
+import { ADD_TO_FAVORITES } from "../../actionConstants";
 
 const mapStateToProps = state => {
   const { currentLocation } = state;
@@ -11,12 +11,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    handleToggleIsDarkMode: () => dispatch({ type: 'TOGGLE_IS_DARK_MODE' }),
-    handleToggleIsCelsius: () => dispatch({ type: 'TOGGLE_IS_CELSIUS' }),
-    handleIncrementClick: () => dispatch({ type: 'INCREMENT' }),
-    handleDecrementClick: () => dispatch({ type: 'DECREMENT' })
+    handleAddToFavorites: (location) => dispatch({ type: ADD_TO_FAVORITES, payload: { location } }),
   }
 };
 
-export default connect(mapStateToProps, {})(WeatherInfo);
+export default connect(mapStateToProps, mapDispatchToProps)(WeatherInfo);
 

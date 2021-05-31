@@ -27,17 +27,21 @@
   }
 }
 
-.App * {
+.App *,
+.logo-header * {
   display: flex;
   padding: 1rem;
   border: 1px solid forestgreen;
 }
 
 .logo-header {
+  display: flex;
   justify-content: space-between;
   border-style: solid;
   border-color: blueviolet;
   border-width: 0px 0px 3px 0px;
+  flex-direction: row;
+  padding: 1rem;
 }
 
 .logo-header * {

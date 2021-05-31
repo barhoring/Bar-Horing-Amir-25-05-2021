@@ -1,11 +1,17 @@
-import { TOGGLE_IS_DARK_MODE, TOGGLE_IS_CELSIUS, SELECT_LOCATION_KEY } from "./actionConstants";
+import { 
+  TOGGLE_IS_DARK_MODE, 
+  TOGGLE_IS_CELSIUS,
+  SELECT_LOCATION_KEY,
+  ADD_TO_FAVORITES,
+  REMOVE_TO_FAVORITES
+} from "./actionConstants";
 
 const defaultState = {
   isDarkMode: false,
   isCelsius: true,
   currentLocation: null,
   currentCityName: '',
-  favoritesCities: [],
+  favoritesCities: {},
   clientLocation: null
 }
 
@@ -20,6 +26,23 @@ export const reducer = function (state = defaultState, action) {
     case SELECT_LOCATION_KEY:
       const { currentLocation } = action.payload;
       return {...state, currentLocation };
+    case ADD_TO_FAVORITES:
+      {
+        const location = action.payload.location;
+        const newState = {...state};
+        const newFavoritesCities = {...newState.favoritesCities};
+        const cityKey = location.Key;
+        debugger;
+        newFavoritesCities[cityKey] = location;
+        return {...newState, favoritesCities: newFavoritesCities}
+      }
+    case REMOVE_TO_FAVORITES:
+      {
+        const locationKey = action.payload;
+        const newState = {...state};
+        delete newState[locationKey];
+        return newState;
+      }
     default:
       return state;
   }

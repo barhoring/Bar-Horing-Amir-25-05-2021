@@ -1,11 +1,7 @@
-// "http://dataservice.accuweather.com/currentconditions/v1/215854?apikey=cNJ6YSXkDrtUrElsVG1kMQMvLrFK4xAg"
-import { API_CURRENT_CONDITIONS_URL_BASE } from "../../constants";
-
-const CityForecast = ({ degrees, isCelsius, currentLocation, conditionsNow }) => {
+const CityForecast = ({ isCelsius, currentLocation, conditionsNow, handleAddToFavorites }) => {
   const units = isCelsius ? "C" : "F";
   return (
     <div className="city-forecast">
-      {/* <div>{JSON.stringify(conditionsNow)}</div> */}
       <div className="weather-now">
         <div className="city-weather">
           <span>
@@ -16,7 +12,7 @@ const CityForecast = ({ degrees, isCelsius, currentLocation, conditionsNow }) =>
             {conditionsNow?.Temperature?.Metric?.Value}° {units}
           </div>
         </div>
-        <div>
+        <div onClick={() => handleAddToFavorites(currentLocation)}>
           ❤️
         </div>
       </div>
