@@ -96,6 +96,14 @@
   flex-direction: column;
 }
 
+.favorites {
+  flex-direction: column;
+}
+
+.favorites .city-forecast {
+  width: fit-content;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

@@ -29,8 +29,10 @@ const Favorites = ({ favoritesCities, handleToggleFavorite, isCelsius }) => {
 }, [])
 
   return (
-    <div>
-      your favs
+    <div className="favorites">
+      <div>
+        Your favorites cities
+      </div>
       {Object.values(favoritesCitiesTemps).map(city => {
         return (
           <CityForecast 
