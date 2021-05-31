@@ -1,5 +1,8 @@
+import { Celsius2Fahrenheit } from "../../util";
+
 const CityForecast = ({ isCelsius, currentLocation, conditionsNow, handleToggleFavorite, isFavorite }) => {
   const units = isCelsius ? "C" : "F";
+  const tempNow = conditionsNow?.Temperature?.Metric?.Value;
   return (
     <div className="city-forecast">
       <div className="weather-now">
@@ -9,7 +12,7 @@ const CityForecast = ({ isCelsius, currentLocation, conditionsNow, handleToggleF
           </span>
           {/* TODO Change here */}
           <div>
-            {conditionsNow?.Temperature?.Metric?.Value}° {units}
+            {isCelsius ? tempNow : Celsius2Fahrenheit(tempNow)}° {units}
           </div>
         </div>
         {/* in favorites page do not display ♡ heart */}

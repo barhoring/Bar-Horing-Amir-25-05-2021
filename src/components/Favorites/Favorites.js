@@ -34,6 +34,7 @@ const Favorites = ({ favoritesCities, handleToggleFavorite, isCelsius }) => {
       {Object.values(favoritesCitiesTemps).map(city => {
         return (
           <CityForecast 
+            key={city.Key}
             handleToggleFavorite={handleToggleFavorite}
             conditionsNow={city.conditionsNow}
             isCelsius={isCelsius}
