@@ -34,7 +34,7 @@ const Favorites = ({ favoritesCities, isCelsius, handleSelectLocation }) => {
       <div>
         {Object.values(favoritesCitiesTemps).map(city => {
           return (
-            <div onClick={() => { debugger; handleSelectLocation(city); navigate(`/`) }}>
+            <div onClick={() => { handleSelectLocation(city); navigate(`/`) }}>
               <CityForecast 
                 key={city.Key}
                 conditionsNow={city.conditionsNow}

@@ -1,4 +1,5 @@
 import Navigation from "./Navigation";
+import Logo from "./Logo";
 
 const Header = ({ isDarkMode, isCelsius, handleToggleIsDarkMode, handleToggleIsCelsius }) => {
   return (
@@ -6,6 +7,7 @@ const Header = ({ isDarkMode, isCelsius, handleToggleIsDarkMode, handleToggleIsC
         <div className="title">
           Herolo Weather Task
         </div>
+        <Logo />
         <div>
           <Navigation/>
           <div onClick={ handleToggleIsDarkMode }>
