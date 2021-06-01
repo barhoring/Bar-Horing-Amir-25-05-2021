@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import CityForecast from "../WeatherInfo/CityForecast";
+import { navigate } from "@reach/router"
 import { API_CURRENT_CONDITIONS_URL_BASE, API_KEY1 } from "../../constants";
 
 const attachTempToCityArray = (cities, data, cityKeys) => {
@@ -10,7 +11,7 @@ const attachTempToCityArray = (cities, data, cityKeys) => {
   return newCities;
 }
 
-const Favorites = ({ favoritesCities, isCelsius }) => {
+const Favorites = ({ favoritesCities, isCelsius, handleSelectLocation }) => {
   const [favoritesCitiesTemps, setFavoritesCitiesTemps] = useState(favoritesCities);
   useEffect(() => {
     const cityKeys = Object.keys(favoritesCities);
@@ -33,12 +34,15 @@ const Favorites = ({ favoritesCities, isCelsius }) => {
       <div>
         {Object.values(favoritesCitiesTemps).map(city => {
           return (
-            <CityForecast 
-              key={city.Key}
-              conditionsNow={city.conditionsNow}
-              isCelsius={isCelsius}
-              currentLocation={city}
-          />)
+            <div onClick={() => { debugger; handleSelectLocation(city); navigate(`/`) }}>
+              <CityForecast 
+                key={city.Key}
+                conditionsNow={city.conditionsNow}
+                isCelsius={isCelsius}
+                currentLocation={city}
+              />
+            </div>
+          )
         })}
       </div>
     </div>
