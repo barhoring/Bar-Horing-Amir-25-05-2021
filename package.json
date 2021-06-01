@@ -19,7 +19,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build-gh-pages": "PUBLIC_URL=https://barhoring.github.io/Bar-Horing-Amir-25-05-2021 react-scripts build",
+    "build-gh-pages": "PUBLIC_URL=https://barhoring.github.io/Bar-Horing-Amir-25-05-2021/ react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
