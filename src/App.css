@@ -9,7 +9,8 @@
   pointer-events: none;
 }
 
-.dark-mode {
+.dark-mode,
+.dark-mode .weather-info-container {
   background-color: black;
 }
 
@@ -17,10 +18,7 @@ html,
 body,
 #root,
 .dark-mode {
-  height: auto;
-}
-
-#root .dark-mode {
+  height: 100%;
 }
 
 .dark-mode,
