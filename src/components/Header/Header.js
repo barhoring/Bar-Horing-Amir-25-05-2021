@@ -8,7 +8,7 @@ const Header = ({ isDarkMode, isCelsius, handleToggleIsDarkMode, handleToggleIsC
           Herolo Weather Task
         </div>
         <Logo />
-        <div>
+        <div className="nav">
           <Navigation/>
           <div onClick={ handleToggleIsDarkMode }>
             { isDarkMode ? "Dark" : "Light" }

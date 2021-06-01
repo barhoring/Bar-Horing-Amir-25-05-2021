@@ -45,7 +45,7 @@ body,
 .logo-header * {
   display: flex;
   padding: 1rem;
-  border: 1px solid forestgreen;
+  /* border: 1px solid forestgreen; */
 }
 
 .logo-header {
@@ -96,7 +96,7 @@ body,
 
 .day-forecast {
   flex-direction: column;
-  border: 1px solid royalblue;
+  border: 1px solid black;
   padding: 0;
 }
 
@@ -104,6 +104,11 @@ body,
   padding: 1rem;
   justify-content: space-between;
   flex-direction: column;
+  border: 1px solid black;
+}
+
+.nav * {
+  padding: 0 0.25rem 0 0.25rem;
 }
 
 .city-weather {
