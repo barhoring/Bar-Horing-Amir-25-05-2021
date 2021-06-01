@@ -10,7 +10,6 @@ const CityForecast = ({ isCelsius, currentLocation, conditionsNow, handleToggleF
           <span>
             {currentLocation?.LocalizedName}
           </span>
-          {/* TODO Change here */}
           <div>
             {isCelsius ? tempNow : Celsius2Fahrenheit(tempNow)}° {units}
           </div>

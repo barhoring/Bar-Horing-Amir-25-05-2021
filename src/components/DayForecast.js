@@ -1,7 +1,4 @@
-const Celsius2Fahrenheit = (celsiusValue) => {
-  const f = celsiusValue * 1.8 + 32;
-  return f.toFixed(2);
-}
+import { Celsius2Fahrenheit } from "../util";
 
 const DayForecast = ({ isCelsius, temperature, day }) => {
   const units = isCelsius ? "C" : "F";

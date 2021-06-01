@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import Search from './Search';
+import { SELECT_LOCATION_KEY } from "../../actionConstants";
 
 const mapStateToProps = state => {
   const { currentLocation } = state;
@@ -10,7 +11,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    handleSelectLocation: (currentLocation) => dispatch({ type: 'SELECT_LOCATION_KEY', payload: { currentLocation }}),
+    handleSelectLocation: (currentLocation) => dispatch({ type: SELECT_LOCATION_KEY, payload: { currentLocation }}),
   }
 };
 

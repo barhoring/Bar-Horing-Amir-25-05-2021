@@ -14,14 +14,12 @@ const WeatherInfo = ({ currentLocation, handleAddToFavorites, handleRemoveFromFa
   useEffect(() => {
     if(currentLocation) {
       const uri = `${API_FORECASTS_5_DAYS_URL_BASE}/${currentLocation.Key}?apikey=${API_KEY1}&metric=true`;
-      // add catch
       fetch(uri)
       .then(res => res.json()).then(res => {
         setDailyForecasts(res.DailyForecasts);
       }).catch(e => console.log(e));
 
       const uri_current_conditions = `${API_CURRENT_CONDITIONS_URL_BASE}/${currentLocation.Key}?apikey=${API_KEY1}&metric=true`;
-      // add catch
       fetch(uri_current_conditions)
       .then(res => res.json()).then(res => {
         setConditionsNow(res[0]);

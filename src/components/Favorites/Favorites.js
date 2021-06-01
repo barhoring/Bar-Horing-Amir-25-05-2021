@@ -10,7 +10,7 @@ const attachTempToCityArray = (cities, data, cityKeys) => {
   return newCities;
 }
 
-const Favorites = ({ favoritesCities, handleToggleFavorite, isCelsius }) => {
+const Favorites = ({ favoritesCities, isCelsius }) => {
   const [favoritesCitiesTemps, setFavoritesCitiesTemps] = useState(favoritesCities);
   useEffect(() => {
     const cityKeys = Object.keys(favoritesCities);
@@ -21,21 +21,20 @@ const Favorites = ({ favoritesCities, handleToggleFavorite, isCelsius }) => {
   })
 
   Promise.all(cityKeysPromise).then((values) => {
-    setFavoritesCitiesTemps(attachTempToCityArray(favoritesCities, values, cityKeys));
-  });
-}, [])
+      setFavoritesCitiesTemps(attachTempToCityArray(favoritesCities, values, cityKeys));
+    });
+  }, []);
 
   return (
     <div className="favorites">
-      <div>
+      <h1>
         Your favorites cities
-      </div>
+      </h1>
       <div>
         {Object.values(favoritesCitiesTemps).map(city => {
           return (
             <CityForecast 
               key={city.Key}
-              handleToggleFavorite={handleToggleFavorite}
               conditionsNow={city.conditionsNow}
               isCelsius={isCelsius}
               currentLocation={city}

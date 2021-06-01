@@ -8,9 +8,6 @@ const Header = ({ isDarkMode, isCelsius, handleToggleIsDarkMode, handleToggleIsC
         </div>
         <div>
           <Navigation/>
-          {/* <div>
-            Home | Favorites
-          </div> */}
           <div onClick={ handleToggleIsDarkMode }>
             { isDarkMode ? "Dark" : "Light" }
           </div>

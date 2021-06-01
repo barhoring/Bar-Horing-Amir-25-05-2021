@@ -1,4 +1,3 @@
-// TODO change to claasNme main
 import Favorites from "../Favorites/"
 
 const FavoritesPage = () => {
