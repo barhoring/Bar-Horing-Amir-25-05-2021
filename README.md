@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Weather App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Live Site](https://barhoring.github.io/Bar-Horing-Amir-25-05-2021/).
 
 ## Available Scripts
 
