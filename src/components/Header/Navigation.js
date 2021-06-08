@@ -3,7 +3,8 @@ import { Link } from "@reach/router";
 const Navigation = () => {
   return (
     <div>
-      <Link to="./">Home</Link> |<Link to="./favorites">Favorites</Link>
+      <Link to={process.env.PUBLIC_URL}>Home</Link> |
+      <Link to={`${process.env.PUBLIC_URL}/favorites`}>Favorites</Link>
     </div>
   );
 };
