@@ -1,5 +1,7 @@
-import Search from '../Search';
-import WeatherInfo from '../WeatherInfo';
+import Search from "../Search";
+import WeatherInfo from "../WeatherInfo";
+
+/* Main Screen */
 
 const Main = () => {
   return (
@@ -8,6 +10,6 @@ const Main = () => {
       <WeatherInfo />
     </div>
   );
-}
+};
 
 export default Main;

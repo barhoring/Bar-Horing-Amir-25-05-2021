@@ -3,7 +3,8 @@ import CityForecast from "../WeatherInfo/CityForecast";
 import { navigate } from "@reach/router";
 import { API_CURRENT_CONDITIONS_URL_BASE, API_KEY1 } from "../../constants";
 
-const attachTempToCityArray = (cities, data, cityKeys) => {
+const attachTempToCityArray = (cities, data) => {
+  const cityKeys = Object.keys(cities);
   const newCities = { ...cities };
   cityKeys.forEach((key, index) => {
     newCities[key].conditionsNow = data[index][0];
@@ -26,11 +27,9 @@ const Favorites = ({ favoritesCities, isCelsius, handleSelectLocation }) => {
     });
 
     Promise.all(cityKeysPromise).then((values) => {
-      setFavoritesCitiesTemps(
-        attachTempToCityArray(favoritesCities, values, cityKeys)
-      );
+      setFavoritesCitiesTemps(attachTempToCityArray(favoritesCities, values));
     });
-  }, []);
+  }, [favoritesCities]);
 
   return (
     <div className="favorites">

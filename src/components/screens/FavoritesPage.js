@@ -1,4 +1,6 @@
-import Favorites from "../Favorites/"
+import Favorites from "../Favorites/";
+
+/* Favorites Screen */
 
 const FavoritesPage = () => {
   return (
@@ -6,6 +8,6 @@ const FavoritesPage = () => {
       <Favorites />
     </div>
   );
-}
+};
 
 export default FavoritesPage;

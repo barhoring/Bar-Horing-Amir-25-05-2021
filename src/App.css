@@ -23,8 +23,20 @@ body,
 
 .dark-mode,
 .dark-mode .MuiInputLabel-outlined,
-.dark-mode .MuiSvgIcon-root {
+.dark-mode .MuiSvgIcon-root,
+.dark-mode .MuiInputBase-root {
   color: white;
+}
+
+.dark-mode .weather-info,
+.dark-mode .day-forecast,
+.dark-mode .MuiOutlinedInput-notchedOutline,
+.dark-mode .city-forecast {
+  border: 1px solid white !important;
+}
+
+.dark-mode .Mui-focused {
+  color: white !important;
 }
 
 .MuiSvgIcon-root .title {
